@@ -1,0 +1,70 @@
+import java.io.*;
+public class L2 {
+
+	public static void main(String[] args) throws IOException {
+		//Exercise 1
+		System.out.print("Enter an integer beteen 0 and 1000:");
+		BufferedReader buf = new BufferedReader(new InputStreamReader(System.in));
+		String num = buf.readLine();
+		String[] digit = num.split("");
+		
+		int digits[] = new int[digit.length];
+		for(int i=0;i<digit.length;i++)
+		{
+			digits[i] = Integer.parseInt(digit[i]);
+		}
+		
+		int total = 0;
+		for(int i=0;i<digit.length;i++)
+		{
+			total = total + digits[i];
+		}
+		System.out.print("The sum of all digits in "+ num + " is " + total +"\n");
+		
+		//Exercicse 2
+		System.out.print("Enter an integer beteen 0 and 1000:");
+		BufferedReader buf2 = new BufferedReader(new InputStreamReader(System.in));
+		String num2 = buf2.readLine();
+		String[] digit2 = num2.split("");
+		
+		int digits2[] = new int[digit2.length];
+		for(int i=0;i<digit2.length;i++)
+		{
+			digits2[i] = Integer.parseInt(digit2[i]);
+		}
+		
+		int total2 = 1;
+		for(int i=0;i<digit2.length;i++)
+		{
+			if(digits2[i] != 0)
+			{
+				total2 = total2 * digits2[i];
+			}
+		}
+		System.out.print("The multiplication of all digits in "+ num2 + " is " + total2 +"\n");
+		
+		//Exercise 3
+		System.out.print("Enter the radius of a circle:");
+		BufferedReader buf3 = new BufferedReader(new InputStreamReader(System.in));
+		String r = buf3.readLine();
+		int radius = Integer.parseInt(r);
+		System.out.print("The area of the circle is:" + radius*radius * Math.PI +"\n");
+		System.out.print("The circumference of the circle is:" + 2*radius * Math.PI +"\n");
+		
+		//Exercise 4
+		System.out.print("Enter the amount of water in kilograms:");
+		BufferedReader buf4 = new BufferedReader(new InputStreamReader(System.in));
+		String num4 = buf4.readLine();
+		System.out.print("Enter the initial temperature:");
+		BufferedReader buf5 = new BufferedReader(new InputStreamReader(System.in));
+		String num5 = buf5.readLine();
+		System.out.print("Enter the final temperature:");
+		BufferedReader buf6 = new BufferedReader(new InputStreamReader(System.in));
+		String num6 = buf6.readLine();
+		double kilo = Double.parseDouble(num4);
+		double init = Double.parseDouble(num5);
+		double finl = Double.parseDouble(num6);
+		System.out.print("The energy needed is " + kilo*(finl-init) *4184);
+	}
+
+}
